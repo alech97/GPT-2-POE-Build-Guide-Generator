@@ -11,7 +11,11 @@ My primary technical contribution to this project is the creation of scripts to 
 [3.7] Alpha's Blade Vortex Assassin Insane Clear Speed (500K-1M+ Boss Damage)
 
 
-This blade vortex build is played as an assassin for the ability to chain herald of ice. The way this works is that the ascendancy node, deadly infusion, gives us 2% base crit on our herald of ice when we are at max power charges. This is significant because herald of ice has a base crit of 0% usually, now this pared with +3% base crit shaper helmet means that our herald of ice has a 100% chance to crit against enemies on full life. Blade vortex offers decent single target to kill even T16 bosses.
+This blade vortex build is played as an assassin for the ability to chain herald of ice. The way this works is that 
+the ascendancy node, deadly infusion, gives us 2% base crit on our herald of ice when we are at max power charges. 
+This is significant because herald of ice has a base crit of 0% usually, now this pared with +3% base crit shaper 
+helmet means that our herald of ice has a 100% chance to crit against enemies on full life. Blade vortex offers 
+decent single target to kill even T16 bosses.
 
  Path Of Building 
 
@@ -74,9 +78,11 @@ http://youtu.be/UzyYPCnVpUQ
 
 + Get some free defense, since this build has no defensive equipment.
 + Weapon:
-- Avoid all possible insta-gank range - This is a very good thing. Even though this build is very mobile, if the enemy can get away from you fast enough, they will be much less likely to attack you.
+- Avoid all possible insta-gank range - This is a very good thing. Even though this build is very mobile, 
+if the enemy can get away from you fast enough, they will be much less likely to attack you.
 - Shield:
-- Focus on hitting the enemies directly - This will boost your survivability a lot, since you can easily block their attacks.
+- Focus on hitting the enemies directly - This will boost your survivability a lot, since you can easily block 
+their attacks.
 
 
 *Not Recommended*
@@ -89,7 +95,8 @@ http://youtu.be/UzyYPCnVpUQ
 
 
 - Weapon:
-- This build is really strong because you can reach full tankiness easily, which is not possible with all the "meta" builds. So this is the only weapon I really recommend, and why it is recommended.
+- This build is really strong because you can reach full tankiness easily, which is not possible with all the 
+"meta" builds. So this is the only weapon I really recommend, and why it is recommended.
 
 
 
@@ -107,7 +114,8 @@ http://youtu.be/UzyYPCnVpUQ
 
 
 - Weapon:
-- You have to decide between a weapon with a high attack speed, like Mjollnir, and a weapon with a high defense, like Mjollnir +2. It depends on the build, but if you're aiming for tankiness, use either of these.
+- You have to decide between a weapon with a high attack speed, like Mjollnir, and a weapon with a high defense, 
+like Mjollnir +2. It depends on the build, but if you're aiming for tankiness, use either of these.
 
 
 - Shield:
@@ -149,7 +157,8 @@ Leveling Guide
 
 
 
-I decided to split up this build so I don't have to make any choices, as my DPS is much better than that of the 2 main builds (CI/CI+RD)
+I decided to split up this build so I don't have to make any choices, as my DPS is much better than that of 
+the 2 main builds (CI/CI+RD)
 
 Skill Tree
 
@@ -164,7 +173,8 @@ Jewels and Gems
 
 Link to Jewels (dont forget to link the passive tree aswell, you can take the Templar one from the Scion Tree)
 
-Link to Gems (you can use these with the Passive Tree or skip them, I chose the Scion one since I don't have the time to go for the Templar one)
+Link to Gems (you can use these with the Passive Tree or skip them, I chose the Scion one since I don't have the 
+time to go for the Templar one)
 
 Links
 
@@ -172,15 +182,23 @@ Links
 
 Skill Tree
 
-I took the High Life, +3% Melee Attack Speed, ES/ES/ES, 3% More Mana, Life/Cast Speed, Increased Area of Effect and the 1% Weapon and Spell Damage nodes for the extra damage and they provide a nice bonus, can also take the higher level jewel if you want to get more life and less Cast Speed.
+I took the High Life, +3% Melee Attack Speed, ES/ES/ES, 3% More Mana, Life/Cast Speed, Increased Area of Effect 
+and the 1% Weapon and Spell Damage nodes for the extra damage and they provide a nice bonus, can also take the 
+higher level jewel if you want to get more life and less Cast Speed.
 
 Jewels and Gems
 
-Some items can't be taken in this build due to the tree, but you can use the one with the +20% Life, Physical Damage, Added Fire Damage, Mana Regeneration and the 3% More Mana node in it. You can take the Wand/Two Handed Tabula Rasa/Two Handed Duelist/Melee Physical damage, Melee Physical Damage, Melee Splash, Added Fire Damage, Added Cold Damage, Melee Physical Projectile and Added Cold Damage for the extra damage.
+Some items can't be taken in this build due to the tree, but you can use the one with the +20% Life, Physical 
+Damage, Added Fire Damage, Mana Regeneration and the 3% More Mana node in it. You can take the Wand/Two Handed 
+Tabula Rasa/Two Handed Duelist/Melee Physical damage, Melee Physical Damage, Melee Splash, Added Fire Damage, 
+Added Cold Damage, Melee Physical Projectile and Added Cold Damage for the extra damage.
 
 Link to Jewels
 
-Some items can't be taken in this build due to the tree, but you can use the one with the +20% Life, Physical Damage, Added Fire Damage, Mana Regeneration and the 3% More Mana node in it. You can take the Wand/Two Handed Tabula Rasa/Two Handed Duelist/Melee Physical damage, Melee Physical Damage, Melee Splash, Added Fire Damage, Added Cold Damage, Melee Physical Projectile and Added Cold Damage for the extra damage.
+Some items can't be taken in this build due to the tree, but you can use the one with the +20% Life, Physical 
+Damage, Added Fire Damage, Mana Regeneration and the 3% More Mana node in it. You can take the Wand/Two Handed 
+Tabula Rasa/Two Handed Duelist/Melee Physical damage, Melee Physical Damage, Melee Splash, Added Fire Damage, 
+Added Cold Damage, Melee Physical Projectile and Added Cold Damage for the extra damage.
 
 Stats
 
@@ -217,16 +235,23 @@ Model prompt >>> [3.7] The Warchief | [Facebreaker] Ancestral Warchief | 2m dps+
 
 Build:
 
-The Warchief is an important part of your build as it will make it possible to clear Uber Fandralis. A high-levelling Warchief is necessary for this build as it's easy to do and should not be underestimated. This build uses the same build as the Ancestral Warchief build as you can take care not to die, if you die you die.
+The Warchief is an important part of your build as it will make it possible to clear Uber Fandralis. A high-levelling 
+Warchief is necessary for this build as it's easy to do and should not be underestimated. This build uses the 
+same build as the Ancestral Warchief build as you can take care not to die, if you die you die.
 
 [3.7] Ancestral Warchief | [Gem]
 [/3.7]
 
-This build's mana regen should be enough to get you through most of maps, but if you are using a mana flask, you're not going to be able to sustain it. Using a flat mana flask, you can use a mana potion, mana flask, and a mana potion. This is a common choice, but with the removal of the flask, the mana regeneration will be low. Don't bother to get any mana potions as they're not necessary.
+This build's mana regen should be enough to get you through most of maps, but if you are using a mana flask, you're 
+not going to be able to sustain it. Using a flat mana flask, you can use a mana potion, mana flask, and a mana 
+potion. This is a common choice, but with the removal of the flask, the mana regeneration will be low. Don't bother 
+to get any mana potions as they're not necessary.
 
 [/3.7]
 
-**This build's stats are not amazing. I don't know why, but the only real damage output at level 90 is 5% or less**. If you see that you're below level 90 and want to go higher, you can try to get some more damage. A high-levelling Warchief should have about 30+k dps, but that is pretty much nothing. If you want to go higher, you can
+**This build's stats are not amazing. I don't know why, but the only real damage output at level 90 is 5% or less**. 
+If you see that you're below level 90 and want to go higher, you can try to get some more damage. A high-levelling 
+Warchief should have about 30+k dps, but that is pretty much nothing. If you want to go higher, you can
 
 
 
@@ -247,7 +272,8 @@ The build requires 6 points in a slot in order to get all skills, including:
 
 [1st] [2nd] [3rd]
 
-I do not have a list of the jewels we are going to need. I really want to get 1 jewel, but I have not gotten my hands on a rare jewel yet.
+I do not have a list of the jewels we are going to need. I really want to get 1 jewel, but I have not gotten my 
+hands on a rare jewel yet.
 
 We're going to use a high level rare.
 
@@ -264,9 +290,11 @@ Skill tree:
 
 I have done a few tweaks to the skill tree.
 
-The first and best change to this tree is that we are putting a 2nd totem at the top of our tree where the 2nd totem can be placed on the floor to make room for the totem's skill.
+The first and best change to this tree is that we are putting a 2nd totem at the top of our tree where the 2nd 
+totem can be placed on the floor to make room for the totem's skill.
 
-This will allow us to easily remove the 2nd totem entirely, and the 2nd totem will take up the space left by the totem.
+This will allow us to easily remove the 2nd totem entirely, and the 2nd totem will take up the space left by the 
+totem.
 
 The second change is that we are removing all of the passive nodes of the tree.
 
@@ -293,9 +321,12 @@ The build is quite simple but I think it works pretty well:
 
 <link>
 
-And the reason why it works so well is due to the fact that when you use a skill, the monster is no longer damaged by it. This means that you always have more room to place skills that deal damage like "Molten Strike" and "Tornado Shot" instead of the other way around.
+And the reason why it works so well is due to the fact that when you use a skill, the monster is no longer 
+damaged by it. This means that you always have more room to place skills that deal damage like "Molten Strike" and 
+"Tornado Shot" instead of the other way around.
 
-Since the monsters are not damaged by skills, this allows you to focus on your minions and the monsters around you to kill them as fast as possible.
+Since the monsters are not damaged by skills, this allows you to focus on your minions and the monsters around you 
+to kill them as fast as possible.
 
 
 
@@ -315,11 +346,15 @@ Model prompt >>> [3.7][HC] Caustic Arrow Raider | Tanky | All Content
 ==========================================================================================
  | No RNG |
 
-This is a very difficult build to play because you're just a very cheap and easy way to farm for a lot of gold. This build is very balanced, but it is not optimal in every way.
+This is a very difficult build to play because you're just a very cheap and easy way to farm for a lot of gold. 
+This build is very balanced, but it is not optimal in every way.
 
 I will give a few tips because I think they are important for these builds:
 
-1. This build is not the best one to play because if you die, you just die and nothing else happens. This build is best to play in combination with one another, especially if you can kill the enemy with one of these two. It is also very much better to have a lot of money than to have a lot of gold but if you can't or don't want to, then I advise to use this build instead.
+1. This build is not the best one to play because if you die, you just die and nothing else happens. This build 
+is best to play in combination with one another, especially if you can kill the enemy with one of these two. It 
+is also very much better to have a lot of money than to have a lot of gold but if you can't or don't want to, 
+then I advise to use this build instead.
 
 2. If you don't want to use this build I suggest you to use another.
 
@@ -346,14 +381,17 @@ Model prompt >>> [3.7] Phys Spec Throw Gladiator
 
 A bit of an odd build, but I've found it more effective than other builds.
 
-DPS is extremely important in this build. I've found myself using a 4Linked Phys Spec gem with a 2nd Phys Spec gem, while always keeping my 3rd and 4th gems up. With this setup, I have no trouble scaling high DPS with the rest of my gear, which helps me a lot.
+DPS is extremely important in this build. I've found myself using a 4Linked Phys Spec gem with a 2nd Phys Spec 
+gem, while always keeping my 3rd and 4th gems up. With this setup, I have no trouble scaling high DPS with the 
+rest of my gear, which helps me a lot.
 
 
 
 
 Gems used:
 
-Phys Spec - this is my main gem, the damage boost is extremely helpful, and gives me the chance to stun enemies on hit.
+Phys Spec - this is my main gem, the damage boost is extremely helpful, and gives me the chance to stun enemies 
+on hit.
 
 4L - This is to be used for stun support, and for stun avoidance.
 
@@ -414,11 +452,16 @@ Model prompt >>> [3.7] Ice Nova Hierophant | All Content [VIDEO]
 ==========================================================================================
 
 
-This Hierophant is the first Ice Nova build to use Ice Nova, and if you are still trying to build a Tier 1 Ice Nova build, consider this rather than the other Ice Nova builds I have listed. You can find all the other Ice Nova builds, but this is the one I like using the most.
+This Hierophant is the first Ice Nova build to use Ice Nova, and if you are still trying to build a Tier 1 
+Ice Nova build, consider this rather than the other Ice Nova builds I have listed. You can find all the 
+other Ice Nova builds, but this is the one I like using the most.
 
-The Hierophant is used in 2 ways: First by using it to gain a decent amount of Cold Damage and Cold to Lightning Damage, and second by using it to gain a decent amount of Life, ES, and Cast Speed.
+The Hierophant is used in 2 ways: First by using it to gain a decent amount of Cold Damage and Cold to 
+Lightning Damage, and second by using it to gain a decent amount of Life, ES, and Cast Speed.
 
-I have included a video of using this build as well (click here to watch), but there is a lot of room for improvement in terms of damage since this build uses Ice Nova to gain a lot of Cold Damage and Cold to Lightning Damage. If you can't help using Ice Nova, consider this the Hierophant instead.
+I have included a video of using this build as well (click here to watch), but there is a lot of room for 
+improvement in terms of damage since this build uses Ice Nova to gain a lot of Cold Damage and Cold to 
+Lightning Damage. If you can't help using Ice Nova, consider this the Hierophant instead.
 
 You can find all the other Ice Nova builds, but this is the one I like using the most.
 
@@ -491,7 +534,9 @@ Model prompt >>> [3.7] SRS Necromancer Build - 5M+ DPS | Uber Elder Deathless
 ==========================================================================================
 
 
-This build is for beginners and has a lot of potential. The build can be easily adapted to other character types, however the main difference is that we will be using a 3.7 passive which adds a lot of damage and it is much easier to play the build at a high level.
+This build is for beginners and has a lot of potential. The build can be easily adapted to other character 
+types, however the main difference is that we will be using a 3.7 passive which adds a lot of damage and it 
+is much easier to play the build at a high level.
 
 
 Gear
@@ -570,17 +615,24 @@ Boots:
 Model prompt >>> [3.7] Essence Drain/Contagion Trickster | Uber Elder | HC Viable
 ==========================================================================================
 
-This build uses a combination of a few different damage mods to support the support gem "Contagion". In an ideal world, the Contagion support skill would be one of the most important items here.
+This build uses a combination of a few different damage mods to support the support gem "Contagion". In an 
+ideal world, the Contagion support skill would be one of the most important items here.
 
-The core of the build is the use of the Essence Drain gem. With its support gem, Essence Drain can do a lot of damage. The key to the build is a very high % life leech support. Life leech is necessary to have enough life to sustain the skill gems and the build is really a hybrid of this and Daresso's Wrath.
+The core of the build is the use of the Essence Drain gem. With its support gem, Essence Drain can do a 
+lot of damage. The key to the build is a very high % life leech support. Life leech is necessary to have 
+enough life to sustain the skill gems and the build is really a hybrid of this and Daresso's Wrath.
 
 With the support of Essence Drain, any life leech is completely negated.
 
-Another important addition is the use of Contagion. This is not an AoE skill but a skill that can be triggered by enemies, such as in the case of the build below.
+Another important addition is the use of Contagion. This is not an AoE skill but a skill that can be triggered 
+by enemies, such as in the case of the build below.
 
-The main reason to use Essence Drain is to support the Contagion support. It also supports the skill gems "Contagion" and "Essence Drain" for an additional life leech.
+The main reason to use Essence Drain is to support the Contagion support. It also supports the skill gems 
+"Contagion" and "Essence Drain" for an additional life leech.
 
-The last thing to consider is the fact that Essence Drain does not increase the damage of a spell, but the amount of attack speed. By having a higher life leech mod, Essence Drain is not only more damage-resistant but also does not require a lot of mana.
+The last thing to consider is the fact that Essence Drain does not increase the damage of a spell, but 
+the amount of attack speed. By having a higher life leech mod, Essence Drain is not only more damage-resistant 
+but also does not require a lot of mana.
 
 The damage of the build is very high and it has enough DPS to be a viable skill.
 
@@ -617,13 +669,16 @@ This will be the main focus of this build.
 
 
 
-This skill is very powerful. I am not sure if it's worth using on bosses if they have low health, or if you need to run a 5link, or if you need to put one on a rare instead, but for this build I've found it to be worth it.
+This skill is very powerful. I am not sure if it's worth using on bosses if they have low health, or if you 
+need to run a 5link, or if you need to put one on a rare instead, but for this build I've found it to be 
+worth it.
 
 I've run it as a 5link for bosses and as a 3link for my friends and for this build.
 
 I can run any 5link, but in this build I highly suggest this one because of the power it contains.
 
-I can run any 3link, but I've found that it's the best one to run for bosses. It scales quite well with the 4 link, so you will have plenty of time to move around the map and get by.
+I can run any 3link, but I've found that it's the best one to run for bosses. It scales quite well with 
+the 4 link, so you will have plenty of time to move around the map and get by.
 
 
 
@@ -634,7 +689,9 @@ I can run any 3link, but I've found that it's the best one to run for bosses. It
 
 
 
-This skill is pretty straight forward. The main goal of the skill is to get hit and do as much damage as possible. The problem with this build is that the more damage you do, the more chances your enemies have to crit and the more times you will have to die.
+This skill is pretty straight forward. The main goal of the skill is to get hit and do as much damage as 
+possible. The problem with this build is that the more damage you do, the more chances your enemies have 
+to crit and the more times you will have to die.
 
 
 
