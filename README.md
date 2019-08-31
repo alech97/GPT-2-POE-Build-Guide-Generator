@@ -148,12 +148,7 @@ Spoiler
 
 
 
-
-
-
-
 Leveling Guide
-
 
 
 
@@ -212,13 +207,6 @@ Endgame Build
 Other Builds
 
 
-
-
-
-
-
-
-
 1.2.0! This build is slightly outdated, but you can get away with it.
 
 
@@ -231,7 +219,6 @@ Sadly, many of the samples missed a fundamental mark: common sense.  This could 
 ```
 Model prompt >>> [3.7] The Warchief | [Facebreaker] Ancestral Warchief | 2m dps+ | Uber Farmer| Elder & Shaper Down
 ==========================================================================================
-
 
 Build:
 
@@ -252,10 +239,6 @@ to get any mana potions as they're not necessary.
 **This build's stats are not amazing. I don't know why, but the only real damage output at level 90 is 5% or less**. 
 If you see that you're below level 90 and want to go higher, you can try to get some more damage. A high-levelling 
 Warchief should have about 30+k dps, but that is pretty much nothing. If you want to go higher, you can
-
-
-
-
 
 ```
 ```
@@ -279,11 +262,7 @@ We're going to use a high level rare.
 
 
 
-
-
 Skill tree:
-
-
 
 
 
@@ -303,9 +282,6 @@ The reason for this is that we are now only needing 4 passive nodes.
 We are putting a 3rd of our points into the passive nodes.
 
 The 5th point
-
-
-
 
 ```
 ```
@@ -330,15 +306,10 @@ to kill them as fast as possible.
 
 
 
-
 I've tested it out on the 3.6 tree (2.7, 3.7, 3.8) but you can use any tree if you have the money to buy them.
 
 
-
 <link>
-
-
-
 
 ```
 ```
@@ -385,9 +356,6 @@ DPS is extremely important in this build. I've found myself using a 4Linked Phys
 gem, while always keeping my 3rd and 4th gems up. With this setup, I have no trouble scaling high DPS with the 
 rest of my gear, which helps me a lot.
 
-
-
-
 Gems used:
 
 Phys Spec - this is my main gem, the damage boost is extremely helpful, and gives me the chance to stun enemies 
@@ -404,9 +372,6 @@ on hit.
 9L - This is for another support gem
 
 
-
-
-
 Gear
 
 
@@ -415,14 +380,6 @@ My gear is not that fancy though, mostly I wear:
 Normal - Leather Leggings, Chest, Rings, Gloves
 Cruel - Leather Leggings, Chest, Gloves, Belt
 Merciless - Leather Leggings, Chest, Gloves, Belt
-
-
-
-
-
-
-
-
 
 
 
@@ -438,13 +395,7 @@ Passive Tree
 
 
 
-
-
-
 <link>
-
-
-
 
 ```
 ```
@@ -471,62 +422,6 @@ You can find all the other Ice Nova builds, but this is the one I like using the
 #28
 #31
 #34
-#35
-#40
-#42
-#43
-#46
-#49
-
-#49
-#50
-#55
-#59
-
-
-
-
-#53
-
-
-
-
-#55
-
-
-
-
-#56
-
-
-
-
-#59
-
-
-
-
-
-
-#63
-
-
-
-
-
-
-#66
-
-
-
-
-#69
-
-#87
-
-
-
-
 
 ```
 ```
@@ -542,7 +437,6 @@ is much easier to play the build at a high level.
 Gear
 
  
-
 We will be using a 6L Soul Taker, the build is geared around the soul taker.
 
 Chest:
@@ -559,7 +453,6 @@ Chest:
 - Life, resists/ammy
 
 - Life, resists and life.
-
 
 
 
@@ -603,12 +496,9 @@ Belt:
 
 
 
-
 Boots:
 
 - Oak/J
-
-
 
 ```
 ```
@@ -639,23 +529,15 @@ The damage of the build is very high and it has enough DPS to be a viable skill.
 Note:
 
 
-
-
-
 ```
 ```
 Model prompt >>> [3.7] Elemental Hit Ascendant [Deathless Uber Elder Video]
 ==========================================================================================
 
-
 This is an example of an elemental ascendancy.
 
 
-
-
 Here's a video showing how this works.
-
-
 
 
 
@@ -663,9 +545,7 @@ Here's a video showing how this works.
 
 
 
-
 This will be the main focus of this build.
-
 
 
 
@@ -681,11 +561,7 @@ I can run any 3link, but I've found that it's the best one to run for bosses. It
 the 4 link, so you will have plenty of time to move around the map and get by.
 
 
-
-
 [**Skill**]
-
-
 
 
 
@@ -694,11 +570,8 @@ possible. The problem with this build is that the more damage you do, the more c
 to crit and the more times you will have to die.
 
 
-
-
 [**Build**]
 
-
-
 This is a very simple build. It will require
+
 ```
