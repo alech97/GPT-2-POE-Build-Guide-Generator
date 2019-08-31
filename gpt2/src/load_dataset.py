@@ -29,7 +29,7 @@ def load_dataset(enc, path, combine):
                     token_chunks.append(npz[item])
         else:
             # Plain text
-            with open(path, 'r') as fp:
+            with open(path, 'r', encoding='utf-8') as fp:
                 raw_text += fp.read()
             if len(raw_text) >= combine:
                 tokens = np.stack(enc.encode(raw_text))

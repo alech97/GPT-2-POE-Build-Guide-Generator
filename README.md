@@ -1,102 +1,647 @@
 # gpt-2
+This project builds upon OpenAI's research into [Unsupervised Multitask Learners](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf).  OpenAI's GPT-2 model shows impressive performance in replicating naturally-occurring language, and introduces new capabilities for reproducing text at long lengths.  Given this new capability, the goal of this project is to fine-tune GPT-2 on a highly technical and highly specialized language: guides for the video game [Path of Exile](https://www.pathofexile.com).  Path of Exile is an RPG known for near-limitless customization.  There are hundreds of abilities, items, and character traits which often have randomly-generated values or variations.  Given the number of possibilities, it is highly unlikely that a player will have the same character as any other player.  This produces an open-ended question for players, one which newer players may struggle to answer.  Thus, more experienced players create Build Guides to help others plan their characters before playing.  Players can navigate to the forums to find thousands of up-to-date guides ready to guide them through character building.  These guides use a highly technical lexicon-- there are thousands of phrases that GPT-2 will have never seen before.  In addition, the guides use a different style than the webpages of WebText that GPT-2 was trained on.  This project aims to test GPT-2's performance on these guides, and to see the extent to which GPT-2 can learn Build Guide creation.
 
-Code from the paper ["Language Models are Unsupervised Multitask Learners"](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf).
+# gpt-2 Tuning
+At the time that this project began, the largest model released was the 345M version, so this was the model chosen.  To fine-tune the model, I am building upon N Shepperd's [gpt-2 repository](https://github.com/nshepperd/gpt-2).  The README and License are preserved in this repository.  
 
-We have currently released small (117M parameter) and medium (345M parameter) versions of GPT-2.  While we have not released the larger models, we have [released a dataset](https://github.com/openai/gpt-2-output-dataset) for researchers to study their behaviors.
-
-See more details in our [blog post](https://blog.openai.com/better-language-models/).
-
-## Usage
-
-This repository is meant to be a starting point for researchers and engineers to experiment with GPT-2.
-
-### Some caveats
-
-- GPT-2 models' robustness and worst case behaviors are not well-understood.  As with any machine-learned model, carefully evaluate GPT-2 for your use case, especially if used without fine-tuning or in safety-critical applications where reliability is important.
-- The dataset our GPT-2 models were trained on contains many texts with [biases](https://twitter.com/TomerUllman/status/1101485289720242177) and factual inaccuracies, and thus GPT-2 models are likely to be biased and inaccurate as well.
-- To avoid having samples mistaken as human-written, we recommend clearly labeling samples as synthetic before wide dissemination.  Our models are often incoherent or inaccurate in subtle ways, which takes more than a quick read for a human to notice.
-
-### Work with us
-
-Please [let us know](mailto:languagequestions@openai.com) if you’re doing interesting research with or working on applications of GPT-2!  We’re especially interested in hearing from and potentially working with those who are studying
-- Potential malicious use cases and defenses against them (e.g. the detectability of synthetic text)
-- The extent of problematic content (e.g. bias) being baked into the models and effective mitigations
-
-## Development
-
-See [DEVELOPERS.md](./DEVELOPERS.md)
-
-## Contributors
-
-See [CONTRIBUTORS.md](./CONTRIBUTORS.md)
-
-## Fine tuning on custom datasets
-
-To retrain GPT-2 117M model on a custom text dataset:
+# Web-Scraping Build Guides
+My primary technical contribution to this project is the creation of scripts to web-scrape Path of Exile build guides from the game's official forum.  To do so, I first created a script to crawl multiple pages in the forum to record the URL strings of the forum threads that I wanted to use.  Then, I ran the script to record 1,000 forum thread URL's for each of the game's 7 main classes (each class has it's own Build Guide forum).  Finally, I built a script to scrape the title and content of the first post in a forum thread, and then ran this script on each unique URL's I had recorded.  This process lead to the creation of 56,425 text files, each of which contained the title and text of a build guide.  These build guides had their hyperlinks replaced with "<link>" and their non-text elements stripped.  Here is an example of such a build guide (trimmed):
 
 ```
-PYTHONPATH=src ./train.py --dataset <file|directory|glob>
+[3.7] Alpha's Blade Vortex Assassin Insane Clear Speed (500K-1M+ Boss Damage)
+
+
+This blade vortex build is played as an assassin for the ability to chain herald of ice. The way this works is that the ascendancy node, deadly infusion, gives us 2% base crit on our herald of ice when we are at max power charges. This is significant because herald of ice has a base crit of 0% usually, now this pared with +3% base crit shaper helmet means that our herald of ice has a 100% chance to crit against enemies on full life. Blade vortex offers decent single target to kill even T16 bosses.
+
+ Path Of Building 
+
+<link>
+
+ Pros & Cons 
+
+ Pros:
+ Great clear speed with herald chains 
+ 100% crit against full life targets 
+ 5k life 
+...
+
+ Cons: 
+ Not many defensive layers 
+ Have to be in melee range 
+ Blade vortex playstyle 
+
+ Gem Links 
+
+Body Armour:
+Blade Vortex | Added Cold | Conc Effect | Hypothermia | Energy Leech | Unleash
+
+Helmet:
+Herald of Ice | Increased Crit | Onslaught | Ice Bite
+
+Boots:
+Precision 5 | Flesh & Stone | Faster Casting | Vaal Breach
+
+Gloves:
+Shield Charge | Fortify | Faster Attacks | Culling Strike
+
+Weapon:
+Vaal RF | Increased duration | Inc AOE
+
+Shield:
+CWDT 10 | Immortal Call 12 | Increased duration
+...
 ```
 
-If you want to precompute the dataset's encoding for multiple runs, you can instead use:
+# Results
+These results were generated by feeding the model Build Guide titles which I found on the forums and were not used to train the model.  I had the model generate 3 samples for each title at whatever length the model's hyperparameters choose.  Of the 3 samples, I choose the samples of the highest quality.
+
+## Serious
+Among the samples, many were very similar to the language and structure of actual guides.  They walk through Pros/Cons, gear choices, playstyle suggestions, and even include updates to the guide to mimic when actual game updates occur.  Interestingly, the model can recreate fake URL strings like YouTube links.  I was not able to find YouTube links within my dataset, as all my links are swapped with the string "<link>".  I am curious how the model knows to insert these videos throughout the guide.  Also, the model includes updates for the guide for game versions 3.8, 3.9, and often 4.0+, but the game is currently in version 3.7.  It is interesting that the model was able to understand decimal increments, but could not pick up on the fact that build guides stopped at version 3.7.
 
 ```
-PYTHONPATH=src ./encode.py <file|directory|glob> /path/to/encoded.npz
-PYTHONPATH=src ./train.py --dataset /path/to/encoded.npz
+Model prompt >>> [3.7] EARTHQUAKE JUGGERNAUT | Tanky Beast [VIDEO]
+==========================================================================================
+ https://www.youtube.com/watch?v=xI_ZpOVX3J0
+
+
+
+http://youtu.be/UzyYPCnVpUQ
+
+
+
+
+- TANK:
+
++ Get some free defense, since this build has no defensive equipment.
++ Weapon:
+- Avoid all possible insta-gank range - This is a very good thing. Even though this build is very mobile, if the enemy can get away from you fast enough, they will be much less likely to attack you.
+- Shield:
+- Focus on hitting the enemies directly - This will boost your survivability a lot, since you can easily block their attacks.
+
+
+*Not Recommended*
+
+
+
+
+[3.8] EARTHQUAKE SCARNER | Brutal Berserker [VIDEO] https://www.youtube.com/watch?v=W_iI2xj_Tpw
+
+
+
+- Weapon:
+- This build is really strong because you can reach full tankiness easily, which is not possible with all the "meta" builds. So this is the only weapon I really recommend, and why it is recommended.
+
+
+
+- Shield:
+- Use a shield with high max health, like pure Mjollnir, instead of a shield that has a high defense.
+
+
+
+*Not Recommended*
+
+
+
+
+[3.9] EARTHQUAKE WARRIOR | Brutal Beast [VIDEO] https://www.youtube.com/watch?v=VxZnB9OK2cI
+
+
+- Weapon:
+- You have to decide between a weapon with a high attack speed, like Mjollnir, and a weapon with a high defense, like Mjollnir +2. It depends on the build, but if you're aiming for tankiness, use either of these.
+
+
+- Shield:
+- Use a shield with high max health, like pure Mjollnir, instead of a shield that has a high defense.
+
+
+
+*Not Recommended*
+
+
+
+
+[3.10] EARTHQUAKE LEADER | Battlecrier [VIDEO] https://www.youtube.com/watch?v=YGmKqj-uqCk
+
+
+- Weapon:
+- If you want to play a tanky beast build, this is the way to go. But if you want to play a
 ```
 
-### Gradient Checkpointing
+```
+Model prompt >>> [3.7][HC] Caustic Arrow Raider | Tanky | All Content
+==========================================================================================
 
-https://github.com/openai/gradient-checkpointing is included to reduce the memory requirements of the model, and can be enabled by `--memory_saving_gradients`. The checkpoints are currently chosen manually (poorly) by just adding layer 10 to the 'checkpoints' collection in model.py. `--memory_saving_gradients` is enabled by default for training the 345M model.
+ (link)
 
-### Validation loss
 
-Set `--val_every` to a number of steps `N > 0`, and "validation" loss against a fixed sample of the dataset will be calculated every N steps to get a better sense of training progress. N around 200 suggested. You can set `--val_dataset` to choose a separate validation dataset, otherwise it defaults to a sample from the train dataset (so not a real cross-validation loss!).
+Recommended Gear
 
-### Optimizer
+Spoiler
 
-You can use SGD instead of Adam with `--optimizer sgd`. This also helps conserve memory when training the 345M model. Note: the learning rate needs to be adjusted for SGD, due to not having Adam's gradient normalization (0.0006 seems to be a good number from some experiments).
 
-### Multi gpu (out of date)
 
-To do distributed on multiple GPUs or machines using Horovod:
+
+
+
+
+Leveling Guide
+
+
+
+
+I decided to split up this build so I don't have to make any choices, as my DPS is much better than that of the 2 main builds (CI/CI+RD)
+
+Skill Tree
+
+Spoiler
+
+
+
+Jewels and Gems
+
+
+
+
+Link to Jewels (dont forget to link the passive tree aswell, you can take the Templar one from the Scion Tree)
+
+Link to Gems (you can use these with the Passive Tree or skip them, I chose the Scion one since I don't have the time to go for the Templar one)
+
+Links
+
+
+
+Skill Tree
+
+I took the High Life, +3% Melee Attack Speed, ES/ES/ES, 3% More Mana, Life/Cast Speed, Increased Area of Effect and the 1% Weapon and Spell Damage nodes for the extra damage and they provide a nice bonus, can also take the higher level jewel if you want to get more life and less Cast Speed.
+
+Jewels and Gems
+
+Some items can't be taken in this build due to the tree, but you can use the one with the +20% Life, Physical Damage, Added Fire Damage, Mana Regeneration and the 3% More Mana node in it. You can take the Wand/Two Handed Tabula Rasa/Two Handed Duelist/Melee Physical damage, Melee Physical Damage, Melee Splash, Added Fire Damage, Added Cold Damage, Melee Physical Projectile and Added Cold Damage for the extra damage.
+
+Link to Jewels
+
+Some items can't be taken in this build due to the tree, but you can use the one with the +20% Life, Physical Damage, Added Fire Damage, Mana Regeneration and the 3% More Mana node in it. You can take the Wand/Two Handed Tabula Rasa/Two Handed Duelist/Melee Physical damage, Melee Physical Damage, Melee Splash, Added Fire Damage, Added Cold Damage, Melee Physical Projectile and Added Cold Damage for the extra damage.
+
+Stats
+
+Leveling
+
+
+Endgame Build
+
+
+
+Other Builds
+
+
+
+
+
+
+
+
+
+1.2.0! This build is slightly outdated, but you can get away with it.
+
+
+
+This build is a good one, but in the end you still have to die on the 2nd part of the tree to
 
 ```
-mpirun -np 4 \
-    -H localhost:4 \
-    -bind-to none -map-by slot \
-    -x NCCL_DEBUG=INFO -x LD_LIBRARY_PATH -x PATH \
-    -x PYTHONPATH=src \
-    -mca pml ob1 -mca btl ^openib \
-    /home/jovyan/gpt-2/train-horovod.py --dataset encoded.npz
+## Funny
+Sadly, many of the samples missed a fundamental mark: common sense.  This could be the result of using a smaller-capacity model, and we might see improvements when the largest model is later released.  Regardless, for players of the game, these guides are often less than impressive:
 ```
+Model prompt >>> [3.7] The Warchief | [Facebreaker] Ancestral Warchief | 2m dps+ | Uber Farmer| Elder & Shaper Down
+==========================================================================================
 
-## GPT-2 samples
 
-| WARNING: Samples are unfiltered and may contain offensive content. |
-| --- |
+Build:
 
-While we have not yet released GPT-2 itself, you can see some samples from it in the `gpt-2-samples` folder.
-We show unconditional samples with default settings (temperature 1 and no truncation), with temperature 0.7, and with truncation with top_k 40.
-We show conditional samples, with contexts drawn from `WebText`'s test set, with default settings (temperature 1 and no truncation), with temperature 0.7, and with truncation with top_k 40.
+The Warchief is an important part of your build as it will make it possible to clear Uber Fandralis. A high-levelling Warchief is necessary for this build as it's easy to do and should not be underestimated. This build uses the same build as the Ancestral Warchief build as you can take care not to die, if you die you die.
 
-## Citation
+[3.7] Ancestral Warchief | [Gem]
+[/3.7]
 
-Please use the following bibtex entry:
+This build's mana regen should be enough to get you through most of maps, but if you are using a mana flask, you're not going to be able to sustain it. Using a flat mana flask, you can use a mana potion, mana flask, and a mana potion. This is a common choice, but with the removal of the flask, the mana regeneration will be low. Don't bother to get any mana potions as they're not necessary.
+
+[/3.7]
+
+**This build's stats are not amazing. I don't know why, but the only real damage output at level 90 is 5% or less**. If you see that you're below level 90 and want to go higher, you can try to get some more damage. A high-levelling Warchief should have about 30+k dps, but that is pretty much nothing. If you want to go higher, you can
+
+
+
+
+
 ```
-@article{radford2019language,
-  title={Language Models are Unsupervised Multitask Learners},
-  author={Radford, Alec and Wu, Jeff and Child, Rewon and Luan, David and Amodei, Dario and Sutskever, Ilya},
-  year={2019}
-}
 ```
+Model prompt >>> [3.7] EARTHQUAKE JUGGERNAUT | Tanky Beast [VIDEO]
+==========================================================================================
+https://www.youtube.com/watch?v=7uLnD8K3j0U
 
-## Future work
 
-We may release code for evaluating the models on various benchmarks.
+I have been working on this.
 
-We are still considering release of the larger models.
+I like the idea of having the ability to kill people in one hit, but this would also allow us to level faster.
 
-## License
+The build requires 6 points in a slot in order to get all skills, including:
 
-[MIT](./LICENSE)
+[1st] [2nd] [3rd]
+
+I do not have a list of the jewels we are going to need. I really want to get 1 jewel, but I have not gotten my hands on a rare jewel yet.
+
+We're going to use a high level rare.
+
+
+
+
+
+Skill tree:
+
+
+
+
+
+
+I have done a few tweaks to the skill tree.
+
+The first and best change to this tree is that we are putting a 2nd totem at the top of our tree where the 2nd totem can be placed on the floor to make room for the totem's skill.
+
+This will allow us to easily remove the 2nd totem entirely, and the 2nd totem will take up the space left by the totem.
+
+The second change is that we are removing all of the passive nodes of the tree.
+
+The reason for this is that we are now only needing 4 passive nodes.
+
+We are putting a 3rd of our points into the passive nodes.
+
+The 5th point
+
+
+
+
+```
+```
+Model prompt >>> [4.0] EARTHQUAKE JUGGERNAUT | Tanky Beast
+==========================================================================================
+ [CAMP]
+
+This is just for fun, I really don't have the time to test it out so why not :)
+
+The build is quite simple but I think it works pretty well:
+
+<link>
+
+<link>
+
+And the reason why it works so well is due to the fact that when you use a skill, the monster is no longer damaged by it. This means that you always have more room to place skills that deal damage like "Molten Strike" and "Tornado Shot" instead of the other way around.
+
+Since the monsters are not damaged by skills, this allows you to focus on your minions and the monsters around you to kill them as fast as possible.
+
+
+
+
+I've tested it out on the 3.6 tree (2.7, 3.7, 3.8) but you can use any tree if you have the money to buy them.
+
+
+
+<link>
+
+
+
+
+```
+```
+Model prompt >>> [3.7][HC] Caustic Arrow Raider | Tanky | All Content
+==========================================================================================
+ | No RNG |
+
+This is a very difficult build to play because you're just a very cheap and easy way to farm for a lot of gold. This build is very balanced, but it is not optimal in every way.
+
+I will give a few tips because I think they are important for these builds:
+
+1. This build is not the best one to play because if you die, you just die and nothing else happens. This build is best to play in combination with one another, especially if you can kill the enemy with one of these two. It is also very much better to have a lot of money than to have a lot of gold but if you can't or don't want to, then I advise to use this build instead.
+
+2. If you don't want to use this build I suggest you to use another.
+
+3. I would advise to stay away from rares and use a chaos rares.
+
+4. If you already know the build, I suggest to use this build instead.
+
+5. I would recommend to use this build instead if you don't have any money but you want a lot of gold.
+
+6. If you don't have any money, use my build instead.
+
+7. I wouldn't recommend to use this build, but if you have some money, then I suggest you to use my build.
+
+8. 
+
+
+7.5.
+
+
+
+Model prompt >>> [3.7] Phys Spec Throw Gladiator
+==========================================================================================
+
+
+A bit of an odd build, but I've found it more effective than other builds.
+
+DPS is extremely important in this build. I've found myself using a 4Linked Phys Spec gem with a 2nd Phys Spec gem, while always keeping my 3rd and 4th gems up. With this setup, I have no trouble scaling high DPS with the rest of my gear, which helps me a lot.
+
+
+
+
+Gems used:
+
+Phys Spec - this is my main gem, the damage boost is extremely helpful, and gives me the chance to stun enemies on hit.
+
+4L - This is to be used for stun support, and for stun avoidance.
+
+5L - This is for the support gems I use.
+
+6L - For the gems I use on myself.
+
+8L - This is for my other gems.
+
+9L - This is for another support gem
+
+
+
+
+
+Gear
+
+
+My gear is not that fancy though, mostly I wear:
+
+Normal - Leather Leggings, Chest, Rings, Gloves
+Cruel - Leather Leggings, Chest, Gloves, Belt
+Merciless - Leather Leggings, Chest, Gloves, Belt
+
+
+
+
+
+
+
+
+
+
+
+Bandits:
+
+Normal - Kill all
+Cruel - Kill all
+Merciless - Kill all
+
+
+
+Passive Tree
+
+
+
+
+
+
+<link>
+
+
+
+
+```
+```
+Model prompt >>> [3.7] Ice Nova Hierophant | All Content [VIDEO]
+==========================================================================================
+
+
+This Hierophant is the first Ice Nova build to use Ice Nova, and if you are still trying to build a Tier 1 Ice Nova build, consider this rather than the other Ice Nova builds I have listed. You can find all the other Ice Nova builds, but this is the one I like using the most.
+
+The Hierophant is used in 2 ways: First by using it to gain a decent amount of Cold Damage and Cold to Lightning Damage, and second by using it to gain a decent amount of Life, ES, and Cast Speed.
+
+I have included a video of using this build as well (click here to watch), but there is a lot of room for improvement in terms of damage since this build uses Ice Nova to gain a lot of Cold Damage and Cold to Lightning Damage. If you can't help using Ice Nova, consider this the Hierophant instead.
+
+You can find all the other Ice Nova builds, but this is the one I like using the most.
+
+#19
+#22
+#27
+#28
+#31
+#34
+#35
+#40
+#42
+#43
+#46
+#49
+
+#49
+#50
+#55
+#59
+
+
+
+
+#53
+
+
+
+
+#55
+
+
+
+
+#56
+
+
+
+
+#59
+
+
+
+
+
+
+#63
+
+
+
+
+
+
+#66
+
+
+
+
+#69
+
+#87
+
+
+
+
+
+```
+```
+Model prompt >>> [3.7] SRS Necromancer Build - 5M+ DPS | Uber Elder Deathless
+==========================================================================================
+
+
+This build is for beginners and has a lot of potential. The build can be easily adapted to other character types, however the main difference is that we will be using a 3.7 passive which adds a lot of damage and it is much easier to play the build at a high level.
+
+
+Gear
+
+ 
+
+We will be using a 6L Soul Taker, the build is geared around the soul taker.
+
+Chest:
+
+- Oak Chest with Life, Energy Shield, resists, and life.
+- Oak/Amber
+
+- Diamond/Sapphire
+
+- Kite/Titanium
+
+- Diamond/Sapphire
+
+- Life, resists/ammy
+
+- Life, resists and life.
+
+
+
+
+Boots:
+
+- Oak/Jade
+
+- Diamond/Sapphire
+
+- Oak/Amber
+
+- Life, resists/ammy
+
+- Life, resists and life.
+
+
+
+Gloves:
+
+- Oak/Jade
+
+- Diamond/Sapphire
+
+- Oak/Amber
+
+- Life, resists/ammy
+
+- Life, resists and life.
+
+
+
+Belt:
+
+- Oak/Jade
+
+- Diamond/Sapphire
+
+- Oak/Amber
+
+- Life, resists/ammy
+
+
+
+
+Boots:
+
+- Oak/J
+
+
+
+```
+```
+Model prompt >>> [3.7] Essence Drain/Contagion Trickster | Uber Elder | HC Viable
+==========================================================================================
+
+This build uses a combination of a few different damage mods to support the support gem "Contagion". In an ideal world, the Contagion support skill would be one of the most important items here.
+
+The core of the build is the use of the Essence Drain gem. With its support gem, Essence Drain can do a lot of damage. The key to the build is a very high % life leech support. Life leech is necessary to have enough life to sustain the skill gems and the build is really a hybrid of this and Daresso's Wrath.
+
+With the support of Essence Drain, any life leech is completely negated.
+
+Another important addition is the use of Contagion. This is not an AoE skill but a skill that can be triggered by enemies, such as in the case of the build below.
+
+The main reason to use Essence Drain is to support the Contagion support. It also supports the skill gems "Contagion" and "Essence Drain" for an additional life leech.
+
+The last thing to consider is the fact that Essence Drain does not increase the damage of a spell, but the amount of attack speed. By having a higher life leech mod, Essence Drain is not only more damage-resistant but also does not require a lot of mana.
+
+The damage of the build is very high and it has enough DPS to be a viable skill.
+
+Note:
+
+
+
+
+
+```
+```
+Model prompt >>> [3.7] Elemental Hit Ascendant [Deathless Uber Elder Video]
+==========================================================================================
+
+
+This is an example of an elemental ascendancy.
+
+
+
+
+Here's a video showing how this works.
+
+
+
+
+
+[**Important**]
+
+
+
+
+This will be the main focus of this build.
+
+
+
+
+This skill is very powerful. I am not sure if it's worth using on bosses if they have low health, or if you need to run a 5link, or if you need to put one on a rare instead, but for this build I've found it to be worth it.
+
+I've run it as a 5link for bosses and as a 3link for my friends and for this build.
+
+I can run any 5link, but in this build I highly suggest this one because of the power it contains.
+
+I can run any 3link, but I've found that it's the best one to run for bosses. It scales quite well with the 4 link, so you will have plenty of time to move around the map and get by.
+
+
+
+
+[**Skill**]
+
+
+
+
+
+This skill is pretty straight forward. The main goal of the skill is to get hit and do as much damage as possible. The problem with this build is that the more damage you do, the more chances your enemies have to crit and the more times you will have to die.
+
+
+
+
+[**Build**]
+
+
+
+This is a very simple build. It will require
+```

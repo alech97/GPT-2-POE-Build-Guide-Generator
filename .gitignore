@@ -1,5 +1,7 @@
 __pycache__
 .mypy_cache/
-models/
-checkpoint
-samples
+gpt2/models/
+gpt2/checkpoint
+gpt2/samples
+Builds
+build_forum_keys.txt
