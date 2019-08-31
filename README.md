@@ -1,7 +1,7 @@
-# gpt-2
+# GPT-2
 This project builds upon OpenAI's research into [Unsupervised Multitask Learners](https://d4mucfpksywv.cloudfront.net/better-language-models/language-models.pdf).  OpenAI's GPT-2 model shows impressive performance in replicating naturally-occurring language, and introduces new capabilities for reproducing text at long lengths.  Given this new capability, the goal of this project is to fine-tune GPT-2 on a highly technical and highly specialized language: guides for the video game [Path of Exile](https://www.pathofexile.com).  Path of Exile is an RPG known for near-limitless customization.  There are hundreds of abilities, items, and character traits which often have randomly-generated values or variations.  Given the number of possibilities, it is highly unlikely that a player will have the same character as any other player.  This produces an open-ended question for players, one which newer players may struggle to answer.  Thus, more experienced players create Build Guides to help others plan their characters before playing.  Players can navigate to the forums to find thousands of up-to-date guides ready to guide them through character building.  These guides use a highly technical lexicon-- there are thousands of phrases that GPT-2 will have never seen before.  In addition, the guides use a different style than the webpages of WebText that GPT-2 was trained on.  This project aims to test GPT-2's performance on these guides, and to see the extent to which GPT-2 can learn Build Guide creation.
 
-# gpt-2 Tuning
+# GPT-2 Tuning
 At the time that this project began, the largest model released was the 345M version, so this was the model chosen.  To fine-tune the model, I am building upon N Shepperd's [gpt-2 repository](https://github.com/nshepperd/gpt-2).  The README and License are preserved in this repository.  
 
 # Web-Scraping Build Guides
@@ -214,6 +214,83 @@ Other Builds
 This build is a good one, but in the end you still have to die on the 2nd part of the tree to
 
 ```
+```
+Model prompt >>> [3.7] SRS Necromancer Build - 5M+ DPS | Uber Elder Deathless
+==========================================================================================
+
+
+This build is for beginners and has a lot of potential. The build can be easily adapted to other character 
+types, however the main difference is that we will be using a 3.7 passive which adds a lot of damage and it 
+is much easier to play the build at a high level.
+
+
+Gear
+
+ 
+We will be using a 6L Soul Taker, the build is geared around the soul taker.
+
+Chest:
+
+- Oak Chest with Life, Energy Shield, resists, and life.
+- Oak/Amber
+
+- Diamond/Sapphire
+
+- Kite/Titanium
+
+- Diamond/Sapphire
+
+- Life, resists/ammy
+
+- Life, resists and life.
+
+
+
+Boots:
+
+- Oak/Jade
+
+- Diamond/Sapphire
+
+- Oak/Amber
+
+- Life, resists/ammy
+
+- Life, resists and life.
+
+
+
+Gloves:
+
+- Oak/Jade
+
+- Diamond/Sapphire
+
+- Oak/Amber
+
+- Life, resists/ammy
+
+- Life, resists and life.
+
+
+
+Belt:
+
+- Oak/Jade
+
+- Diamond/Sapphire
+
+- Oak/Amber
+
+- Life, resists/ammy
+
+
+
+Boots:
+
+- Oak/J
+
+```
 ## Funny
 Sadly, many of the samples missed a fundamental mark: common sense.  This could be the result of using a smaller-capacity model, and we might see improvements when the largest model is later released.  Regardless, for players of the game, these guides are often less than impressive:
 ```
@@ -236,7 +313,7 @@ to get any mana potions as they're not necessary.
 
 [/3.7]
 
-**This build's stats are not amazing. I don't know why, but the only real damage output at level 90 is 5% or less**. 
+This build's stats are not amazing. I don't know why, but the only real damage output at level 90 is 5% or less. 
 If you see that you're below level 90 and want to go higher, you can try to get some more damage. A high-levelling 
 Warchief should have about 30+k dps, but that is pretty much nothing. If you want to go higher, you can
 
@@ -425,83 +502,6 @@ You can find all the other Ice Nova builds, but this is the one I like using the
 
 ```
 ```
-Model prompt >>> [3.7] SRS Necromancer Build - 5M+ DPS | Uber Elder Deathless
-==========================================================================================
-
-
-This build is for beginners and has a lot of potential. The build can be easily adapted to other character 
-types, however the main difference is that we will be using a 3.7 passive which adds a lot of damage and it 
-is much easier to play the build at a high level.
-
-
-Gear
-
- 
-We will be using a 6L Soul Taker, the build is geared around the soul taker.
-
-Chest:
-
-- Oak Chest with Life, Energy Shield, resists, and life.
-- Oak/Amber
-
-- Diamond/Sapphire
-
-- Kite/Titanium
-
-- Diamond/Sapphire
-
-- Life, resists/ammy
-
-- Life, resists and life.
-
-
-
-Boots:
-
-- Oak/Jade
-
-- Diamond/Sapphire
-
-- Oak/Amber
-
-- Life, resists/ammy
-
-- Life, resists and life.
-
-
-
-Gloves:
-
-- Oak/Jade
-
-- Diamond/Sapphire
-
-- Oak/Amber
-
-- Life, resists/ammy
-
-- Life, resists and life.
-
-
-
-Belt:
-
-- Oak/Jade
-
-- Diamond/Sapphire
-
-- Oak/Amber
-
-- Life, resists/ammy
-
-
-
-Boots:
-
-- Oak/J
-
-```
-```
 Model prompt >>> [3.7] Essence Drain/Contagion Trickster | Uber Elder | HC Viable
 ==========================================================================================
 
@@ -575,3 +575,5 @@ to crit and the more times you will have to die.
 This is a very simple build. It will require
 
 ```
+# Conclusion
+Despite some of the shortcomings of my results, it's clear to see that OpenAI's GPT-2 is an impressive leap in natural language modeling, especially when you consider that my dataset is so highly specialized, or that my results could be improved by using their larger models or by training for a longer duration.  In comparison to RNN text generation of only a couple years ago, the research community has made incredible strides in natural language modeling.  To me, it is evident that with enough adaptations of our current process, we could reach comprehensive text generation at some point.  
